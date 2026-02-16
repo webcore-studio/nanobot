@@ -215,6 +215,8 @@ class WebToolsConfig(BaseModel):
 class ExecToolConfig(BaseModel):
     """Shell exec tool configuration."""
     timeout: int = 60
+    allow_patterns: list[str] = Field(default_factory=list)
+    deny_patterns: list[str] = Field(default_factory=list)
 
 
 class MCPServerConfig(BaseModel):
