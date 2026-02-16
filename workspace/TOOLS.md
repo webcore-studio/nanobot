@@ -39,6 +39,8 @@ exec(command: str, working_dir: str = None) -> str
 **Safety Notes:**
 - Commands have a configurable timeout (default 60s)
 - Dangerous commands are blocked (rm -rf, format, dd, shutdown, etc.)
+- Optional `allowPatterns` regex allowlist (when set, command must match at least one pattern, e.g. `^[\s]*curl(\s|$)`)
+- Optional `denyPatterns` regex denylist override for blocked commands
 - Output is truncated at 10,000 characters
 - Optional `restrictToWorkspace` config to limit paths
 
